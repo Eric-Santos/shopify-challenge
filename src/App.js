@@ -13,9 +13,11 @@ function App() {
 
   useEffect(() => {
     axios
-      .get('https://api.nasa.gov/planetary/apod?api_key=hzQ1VrvM5cSvH6REAE8wiGe3Q119EPu6YWyAharL&start_date=2021-09-01')
-      .then(res => setNasaState(res.data))
-      .catch(err => console.log(err));
+      .get(
+        "https://api.nasa.gov/planetary/apod?api_key=hzQ1VrvM5cSvH6REAE8wiGe3Q119EPu6YWyAharL&start_date=2021-09-01"
+      )
+      .then((res) => setNasaState(res.data))
+      .catch((err) => console.log(err));
   }, [setNasaState]);
 
 

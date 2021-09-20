@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
+import "../styles/nasaCard.css";
 import { Card, Image } from "semantic-ui-react";
 import { motion } from "framer-motion";
 
@@ -10,9 +11,9 @@ const NasaCard = ({ hdurl, title, date, explanation }) => {
   };
 
   return (
-    <Card.Group centered>
+    <Card.Group centered className="cardGroup">
       <Card fluid>
-        <Image src={hdurl} wrapped ui={false} alt="nasa" />
+        <Image src={hdurl} wrapped ui={false} alt="nasa" loading="lazy" />
         <Card.Content>
           <Card.Header>{title}</Card.Header>
           <Card.Meta>
@@ -43,4 +44,4 @@ const NasaCard = ({ hdurl, title, date, explanation }) => {
   );
 };
 
-export default NasaCard
+export default NasaCard;
