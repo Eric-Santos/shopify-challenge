@@ -23,7 +23,7 @@ function App() {
     <>
       {nasaState.map((item) => {
         return (
-          <NasaCard hdurl={item.hdurl} title={item.title} date={item.date} explanation={item.explanation} />
+          <NasaCard key={item.date} hdurl={item.hdurl} title={item.title} date={item.date} explanation={item.explanation} />
         )
       })}
     </>
