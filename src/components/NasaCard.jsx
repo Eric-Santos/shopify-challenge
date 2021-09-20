@@ -4,13 +4,14 @@ import { Card, Icon, Image } from 'semantic-ui-react'
 const NasaCard = ({hdurl,title, date, explanation}) => {
 
   const [isLiked, setIsLiked] = useState(true)
-  
+
   const handleClick = () => {
     setIsLiked(!isLiked)
   }
 
     return (
-        <Card>
+      <Card.Group centered>
+        <Card fluid>
           <Image src={hdurl} wrapped ui={false} alt='nasa' />
     <Card.Content>
       <Card.Header>{title}</Card.Header>
@@ -30,6 +31,7 @@ const NasaCard = ({hdurl,title, date, explanation}) => {
       }
     </Card.Content>
   </Card>
+        </Card.Group>
     )
 }
 

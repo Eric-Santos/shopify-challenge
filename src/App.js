@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import './App.css';
+import './styles/app.css';
 
 import axios from 'axios'
 import NasaCard from './components/NasaCard'
@@ -20,13 +20,13 @@ function App() {
 
 
   return (
-    <>
+    <main>
       {nasaState.map((item) => {
         return (
           <NasaCard key={item.date} hdurl={item.hdurl} title={item.title} date={item.date} explanation={item.explanation} />
         )
       })}
-    </>
+    </main>
   );
 }
 
