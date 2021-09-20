@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import { Card, Icon, Image,Button } from 'semantic-ui-react'
+import { Card, Icon, Image } from 'semantic-ui-react'
 
-const NasaCard = (props) => {
+const NasaCard = ({hdurl,title, date, explanation}) => {
 
   const [isLiked, setIsLiked] = useState(true)
   
@@ -11,24 +11,23 @@ const NasaCard = (props) => {
 
     return (
         <Card>
-          <Image src={props.nasaState.hdurl} wrapped ui={false} alt='nasa' />
+          <Image src={hdurl} wrapped ui={false} alt='nasa' />
     <Card.Content>
-      <Card.Header>{props.nasaState.title}</Card.Header>
+      <Card.Header>{title}</Card.Header>
       <Card.Meta>
-        <span className='date'>{props.nasaState.date}</span>
+        <span className='date'>{date}</span>
       </Card.Meta>
       <Card.Description>
-       {props.nasaState.explanation}
+       {explanation}
       </Card.Description>
     </Card.Content>
-    <Card.Content extra onClick={handleClick}>
-      {isLiked ? <Button>
-            <Icon name='like' />
-            Like
-      </Button>: <Button>
-            <Icon name='cancel' />
-            Unlike
-      </Button>}
+        <Card.Content extra onClick={handleClick}>
+          {/* conditional rendering based on state, removed button due to deprecated FindDOMNode React error */}
+      {isLiked ?
+            <Icon name='like'>Like</Icon>
+       :
+            <Icon name='cancel'>Unlike</Icon>
+      }
     </Card.Content>
   </Card>
     )
